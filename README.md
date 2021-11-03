@@ -108,7 +108,7 @@ time: Store timestamps of records in songplays broken down into specific units
 |____etl.py			# ETL builder
 |____sql_queries.py			# Define query structure
 |____create_tables.py			# Database/table creation script
-|____er_diagram.py			# Database/table creation script
+|____er_diagram.py			# ER diagram creation script
 |
 |____README.md			# README file
 ```
