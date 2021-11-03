@@ -40,6 +40,8 @@ And below is an example of what the data in a log file, 2018-11-12-events.json, 
 
 The project data model has been built under a **star schema**, which contains a fact table and 4 dimension tables. The reason why it was decided to work under this type of scheme was that being a type of scheme that allows us to perform simple queries and quick aggregations, it would greatly facilitate the task of the Sparkify analytics team when consulting the data.
 
+![ER_Diagram](/assets/sparkifydb_erd.png)
+
 ### Fact Table
 ```
 songplays: Store the records in log data associated with song plays i.e. records with page "NextSong"
@@ -106,11 +108,12 @@ time: Store timestamps of records in songplays broken down into specific units
 |____etl.py			# ETL builder
 |____sql_queries.py			# Define query structure
 |____create_tables.py			# Database/table creation script
+|____er_diagram.py			# Database/table creation script
 |
 |____README.md			# README file
 ```
 
-In addition to the data files (data folder), the project workspace includes six files:
+In addition to the data files (data folder), the project workspace includes 8 files:
 
 1. ```test.ipynb```: Display the first few rows of each table to let us check y database.
 2. ```create_tables.py```: Drop and create our tables. We run this file to reset our tables before each time we run our ETL scripts.
@@ -118,7 +121,8 @@ In addition to the data files (data folder), the project workspace includes six 
 4. ```etl.py```: Read and process files from song_data and log_data folder and loads them into our tables. We can fill this out based on our work in the ETL notebook.
 5. ```sql_queries.py```: Contains all our sql queries, and is imported into the last three files above.
 6. ```sparkify.ipynb```: Run the create_tables.py and etl.py files to create our sparkifydb database and tables, and run our ETL process respectively.
-6. ```README.md```: Provide discussion on our project.
+7. ```er_diagram.py```: Create a ER diagram based on Postgres tables using sqlalchemy and Python.
+8. ```README.md```: Provide discussion on our project.
 
 ## ETL Pipeline
 
@@ -146,3 +150,17 @@ python3 etl.py
 ```
 3. In case we want to run our ETL pipeline through Jupyter Notebook, we run the ```etl.ipynb``` file instead of step 2.
 4. Finally, we run the ```test.ipynb``` notebook to validate that our data has been inserted correctly, or we can also directly query the tables of our sparkifydb database in Postgres.
+
+## Generate ER diagram
+
+Additionally, you can create an ER diagram on the tables created in Postgres by running the er_diagram.py file. To do this, you must follow the following steps:
+
+1. Install the following packages:
+```
+pip install SQLAlchemy
+pip install sqlalchemy_schemadisplay
+```
+2. Open the terminal, go to the path where the project is located and execute the following:
+```
+python3 er_diagram.py
+```
