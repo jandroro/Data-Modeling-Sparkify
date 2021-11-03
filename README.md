@@ -49,8 +49,8 @@ songplays: Store the records in log data associated with song plays i.e. records
     - start_time TIMESTAMP
     - user_id INT
     - level VARCHAR
-    - song_id VARCHAR NOT NULL
-    - artist_id VARCHAR NOT NULL
+    - song_id VARCHAR
+    - artist_id VARCHAR
     - session_id INT
     - location VARCHAR
     - user_agent VARCHAR
