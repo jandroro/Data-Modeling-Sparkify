@@ -126,8 +126,6 @@ In addition to the data files (data folder), the project workspace includes 8 fi
 
 ## ETL Pipeline
 
-El primer paso dentro del proceso ETL consiste en conectarnos a la base de datos ```sparkifydb``` y crear un cursor que nos permita ejecutar nuestras queries a lo largo de todo el proceso. A continuación leemos y procesamos todos los archivos de songs contenidos en el folder ```data/song_data```, escribiendo la información procesada dentro de las tablas de dimensiones ```songs``` y ```artists```. Luego de ello leemos y procesamos todos los archivos de logs contenidos en el folder ```data/log_data``` para finalmente guardar esta información dentro de las tablas de dimensiones ```time``` y ```users```, así como en la tabla de hechos ```songplays```
-
 The first step in the ETL process is to connect to the ```sparkifydb``` database and create a cursor that allows us to execute our queries throughout the entire process. Next we read and process all the song files contained in the folder ```data/song_data```, writing the processed information into the dimension tables ```songs``` and ```artists```. After that we read and process all the log files contained in the folder ```data/log_data``` to finally save this information inside the dimension tables ```time``` and ```users```, as well as in the fact table ```songplays```
 
 ## Program execution
